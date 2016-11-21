@@ -1,0 +1,14 @@
+// Vertical Align Placeholder for @extend
+%vertical-align {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// Transition Mixin
+@mixin transition($transitionSpeed: 0.2s, $ease: cubic-bezier(0.8, 0, 0.2, 1)) {
+	transition: $transitionSpeed $ease;
+	-o-transition: $transitionSpeed $ease;
+	-ms-transition: $transitionSpeed $ease;
+	-moz-transition: $transitionSpeed $ease;
+	-webkit-transition: $transitionSpeed $ease;
+}
