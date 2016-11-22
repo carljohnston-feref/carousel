@@ -6,7 +6,6 @@ j-carousel {
 	#viewport {
 		width: 1000px;
 		overflow-x: hidden;
-		height: 200px;
 	}
 
 	#imgContainer {
@@ -21,7 +20,7 @@ j-carousel {
 			font-size: initial;
 			display: inline-block;
 			width: 200px;
-			height: 200px;
+			text-align: center;
 
 			&:nth-child(1) {
 				background: blue;
@@ -61,6 +60,12 @@ j-carousel {
 
 			&:nth-child(10) {
 				background: purple;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block
 			}
 		}
 	}
