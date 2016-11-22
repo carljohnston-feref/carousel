@@ -1,5 +1,6 @@
 // Vertical Align Placeholder for @extend
-%vertical-align {
+@mixin vertical-align($position: relative) {
+	position: $position;
 	top: 50%;
 	transform: translateY(-50%);
 }

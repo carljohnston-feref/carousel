@@ -1,30 +1,35 @@
 // Variables
-var currentSlide = 0;																		// Set initial slide position
-var imgWidth = document.getElementById('imgContainer').children[0].offsetWidth;				// Find width of first image
-var imgTotal = document.getElementById('imgContainer').getElementsByTagName('img').length;	// Find number of images withing carousel
+var slidePosition = 0;																		// Set initial slide position
+var iw = document.getElementById('imgContainer').children[0].offsetWidth;					// Image width
+var ti = document.getElementById('imgContainer').getElementsByTagName('img').length;		// Total number of images withing carousel
+var cw = document.getElementById('window').offsetWidth;										// Container width
+var vi = Math.floor(cw / iw);																// Viewable images
+var resetSlide = (ti - vi);																	// Slide position to reset slidePosition to 0 without any white space
 
 // prevBtn function
 function prevBtn() {
-	currentSlide++;															// Iterate current slide
+	slidePosition++;															// Iterate current slide
 
-	if (currentSlide > 0) {													// If currentSlide is showing the first image position
-		currentSlide = (imgTotal - (imgTotal * 2)) + 1;						// Set currentSlide to the last image position
+	if (slidePosition > 0) {													// If slidePosition is showing the first image position
+		slidePosition = (resetSlide - (resetSlide * 2));						// Set slidePosition to the last image position 
 	}
 
-	var slideAnim = (imgWidth * currentSlide);								// Calculate animation distance (#px from left)
-	document.getElementById('imgContainer').style.left = slideAnim + "px";	// Animate container
+	var slideAnim = (iw * slidePosition);										// Calculate animation distance (#px from left)
+
+	document.getElementById('imgContainer').style.left = slideAnim + "px";		// Animate container
 }
 
 // nextBtn function
 function nextBtn() {
-	currentSlide--;															// Iterate current slide
+	slidePosition--;															// Iterate current slide
 
-	if (currentSlide <= imgTotal - (imgTotal * 2)) {						// If currentSlide is showing the last image position
-		currentSlide = 0;													// Set currentSlide to the first image position
+	if (slidePosition <= resetSlide - ((resetSlide * 2) + 1) ) {				// After last images comes into view
+		slidePosition = 0;														// Set slidePosition to the first image position
 	}
 
-	var slideAnim = (imgWidth * currentSlide);								// Calculate animation distance (#px from left)
-	document.getElementById('imgContainer').style.left = slideAnim + "px";	// Animate container
+	var slideAnim = (iw * slidePosition);										// Calculate animation distance (#px from left)
+
+	document.getElementById('imgContainer').style.left = slideAnim + "px";		// Animate container
 }
 
 // Controls Event Listeners
