@@ -120,3 +120,60 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+j-carousel {
+  display: block;
+  font-size: 0; }
+  j-carousel #window {
+    width: 1000px;
+    overflow-x: hidden;
+    height: 200px; }
+  j-carousel #imgContainer {
+    position: relative;
+    left: 0;
+    width: 9999999999px;
+    transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    -o-transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    -ms-transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    -moz-transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    -webkit-transition: 0.5s cubic-bezier(0.65, 0, 0.35, 1); }
+  j-carousel img {
+    font-size: initial;
+    display: inline-block;
+    width: 200px;
+    height: 200px; }
+    j-carousel img:nth-child(1) {
+      background: blue; }
+    j-carousel img:nth-child(2) {
+      background: green; }
+    j-carousel img:nth-child(3) {
+      background: yellow; }
+    j-carousel img:nth-child(4) {
+      background: red; }
+    j-carousel img:nth-child(5) {
+      background: purple; }
+    j-carousel img:nth-child(6) {
+      background: blue; }
+    j-carousel img:nth-child(7) {
+      background: green; }
+    j-carousel img:nth-child(8) {
+      background: yellow; }
+    j-carousel img:nth-child(9) {
+      background: red; }
+    j-carousel img:nth-child(10) {
+      background: purple; }
+
+j-carousel-controls {
+  display: block; }
+  j-carousel-controls #prev,
+  j-carousel-controls #next {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 15px;
+    border: 1px solid #ccc; }
+    j-carousel-controls #prev:hover,
+    j-carousel-controls #next:hover {
+      background: #ccc; }
+    j-carousel-controls #prev:active,
+    j-carousel-controls #next:active {
+      background: #666; }

@@ -5,7 +5,7 @@
 }
 
 // Transition Mixin
-@mixin transition($transitionSpeed: 0.2s, $ease: cubic-bezier(0.8, 0, 0.2, 1)) {
+@mixin transition($transitionSpeed: 0.2s, $ease: cubic-bezier(0.65, 0, 0.35, 1)) {
 	transition: $transitionSpeed $ease;
 	-o-transition: $transitionSpeed $ease;
 	-ms-transition: $transitionSpeed $ease;

@@ -1,0 +1,86 @@
+// Global
+
+j-carousel {
+	display: block;
+	font-size: 0;
+
+	#window {
+		width: 1000px;
+		overflow-x: hidden;
+		height: 200px;
+	}
+
+	#imgContainer {
+		position: relative;
+		left: 0;
+		width: 9999999999px;
+		@include transition(0.5s);
+	}
+	
+	img {
+		font-size: initial;
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+
+		&:nth-child(1) {
+			background: blue;
+		}
+
+		&:nth-child(2) {
+			background: green;
+		}
+
+		&:nth-child(3) {
+			background: yellow;
+		}
+
+		&:nth-child(4) {
+			background: red;
+		}
+
+		&:nth-child(5) {
+			background: purple;
+		}
+
+		&:nth-child(6) {
+			background: blue;
+		}
+
+		&:nth-child(7) {
+			background: green;
+		}
+
+		&:nth-child(8) {
+			background: yellow;
+		}
+
+		&:nth-child(9) {
+			background: red;
+		}
+
+		&:nth-child(10) {
+			background: purple;
+		}
+	}
+}
+
+j-carousel-controls {
+	display: block;
+
+	#prev,
+	#next {
+		display: inline-block;
+		cursor: pointer;
+		padding: 5px 15px;
+		border: 1px solid #ccc;
+
+		&:hover {
+			background: #ccc;
+		}
+
+		&:active {
+			background: #666;
+		}
+	}
+}
