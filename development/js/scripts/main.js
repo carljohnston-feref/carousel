@@ -1,10 +1,17 @@
 // Variables
-var slidePosition = 0;																		// Set initial slide position
-var iw = document.getElementById('imgContainer').children[0].offsetWidth;					// Image width
-var ti = document.getElementById('imgContainer').getElementsByTagName('img').length;		// Total number of images withing carousel
-var cw = document.getElementById('window').offsetWidth;										// Container width
-var vi = Math.floor(cw / iw);																// Viewable images
-var resetSlide = (ti - vi);																	// Slide position to reset slidePosition to 0 without any white space
+var slidePosition = 0;															// Set initial slide position
+
+var container = document.getElementById('imgContainer');						// Container Element
+var viewport = document.getElementById('viewport');								// viewport Element
+var ul = container.getElementsByTagName('ul')[0];								// 1st ul Element
+var img = ul.getElementsByTagName('li');										// All li Elements
+var li = img[0];																// 2st li Element
+
+var imgWidth = li.offsetWidth;													// Image width
+var totalImg = img.length;														// Total number of images withing carousel
+var containerWidth = viewport.offsetWidth;										// Container width
+var viewableImg = Math.floor(containerWidth / imgWidth);						// Viewable images
+var resetSlide = (totalImg - viewableImg);										// Slide position to reset slidePosition to 0 without any white space
 
 // prevBtn function
 function prevBtn() {
@@ -14,9 +21,9 @@ function prevBtn() {
 		slidePosition = (resetSlide - (resetSlide * 2));						// Set slidePosition to the last image position 
 	}
 
-	var slideAnim = (iw * slidePosition);										// Calculate animation distance (#px from left)
+	var slideAnim = (imgWidth * slidePosition);									// Calculate animation distance (#px from left)
 
-	document.getElementById('imgContainer').style.left = slideAnim + "px";		// Animate container
+	container.style.left = slideAnim + "px";									// Animate container
 }
 
 // nextBtn function
@@ -27,9 +34,9 @@ function nextBtn() {
 		slidePosition = 0;														// Set slidePosition to the first image position
 	}
 
-	var slideAnim = (iw * slidePosition);										// Calculate animation distance (#px from left)
+	var slideAnim = (imgWidth * slidePosition);									// Calculate animation distance (#px from left)
 
-	document.getElementById('imgContainer').style.left = slideAnim + "px";		// Animate container
+	container.style.left = slideAnim + "px";									// Animate container
 }
 
 // Controls Event Listeners
